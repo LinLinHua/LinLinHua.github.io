@@ -1,6 +1,6 @@
 ---
 layout: post # Do not change
-category: [aws, python, serverless, ml] # Project categories
+category: [Cloud Computing] # Project categories
 title: "ReceiptInbox - Serverless Receipt Parser & Smart Alerts" # Project title
 date: 2025-11-13 20:30:00 -0800 # Date
 author: LinLinHua # The author nick we created

@@ -1,6 +1,6 @@
 ---
 layout: post # Do not change
-category: [ml, research, python, tensorflow] # Project categories
+category: [Machine Learning] # Project categories
 title: "Co-authored: Multi-Output Regression with GANs (MOR-GANs)" # Title from paper
 date:   2021-09-01 10:00:00 +0100 # Date from resume
 author: LinLinHua # Your author nick

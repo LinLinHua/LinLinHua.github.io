@@ -1,6 +1,6 @@
 ---
 layout: post # Do not change
-category: [semiconductor] # THIS IS THE NEW CATEGORY ID!
+category: [Semiconductor] # THIS IS THE NEW CATEGORY ID!
 title: "High-k Sol-Gel HfO2 Gate Dielectric Layer Fabrication"
 date:   2019-03-01 10:00:00 +0800 # Date of project start
 author: LinLinHua # Your author nick

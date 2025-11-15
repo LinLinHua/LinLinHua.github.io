@@ -1,6 +1,6 @@
 ---
 layout: post # Do not change
-category: [ml, nlp, python, pytorch] # Project categories
+category: [Machine Learning] # Project categories
 title: "Intent Classification for ATIS Airline Queries (EE 541)" # Project title
 date:   2025-11-13 10:00:00 -0800 # Date from proposal timeline
 author: LinLinHua # Your author nick

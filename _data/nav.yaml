@@ -10,7 +10,7 @@
   hue: "var(--c-themeHueGreen)"
 # -----------------------------------------------------------------
 - title: GitHub
-  url: https://github.com/LinLinHua # Your GitHub profile from your resume
+  url: /https://github.com/LinLinHua # Your GitHub profile from your resume
   icon: assets/img/icons/icons8-github-500.svg # Re-using this icon
   hue: "var(--c-themeHueBlue)"
 # -----------------------------------------------------------------
