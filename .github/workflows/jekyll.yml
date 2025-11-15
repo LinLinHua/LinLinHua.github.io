@@ -1,0 +1,41 @@
+name: Deploy Jekyll Site (GitHub Pages)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # Using the modern version you installed with rbenv
+          bundler-cache: true # Installs gems from Gemfile.lock
+
+      - name: Install dependencies and Build Jekyll Site
+        run: |
+          # The bundler-cache step above already installed dependencies, 
+          # but we run build manually to ensure consistency.
+          bundle exec jekyll build --baseurl "${{ github.event.repository.name }}"
+      
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+          
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
