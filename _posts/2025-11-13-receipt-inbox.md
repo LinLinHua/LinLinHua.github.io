@@ -1,9 +1,9 @@
 ---
 layout: post # Do not change
-category: [Cloud Computing] # Project categories
+category: [cloudcomputing] # Project categories
 title: "ReceiptInbox - Serverless Receipt Parser & Smart Alerts" # Project title
 date: 2025-11-13 20:30:00 -0800 # Date
-author: LinLinHua # The author nick we created
+author: LilyHua # The author nick we created
 prevPart: _posts/2025-11-13-intent-classification-lstm.md
 nextPart: _posts/2025-11-14-personal-portfolio-ci-cd.md
 og_description: "A cloud-native application using AWS Lambda, SQS, Textract, and ML for automated receipt processing and spend analysis." # Project description
@@ -48,21 +48,22 @@ This "cascading queues" architecture decouples the OCR and ML inference steps, d
 ---
 
 ### Project Links
-
+{% assign github_url1 = 'https://github.com/kanglinde/ee547-final-project.git' %}
 <div class='sx-button'>
-  <a href='https://github.com/kanglinde/ee547-final-project.git' class='sx-button__content theme' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/c.svg'/> View on GitHub
+  <a href='{{ github_url1 }}' class='sx-button__content red' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/icons8-github-500.svg'/> View on GitHub
   </a>
 </div>
 
 <div class='sx-button'>
-  <a href='/assets/pdf/Proposal.pdf' class='sx-button__content blue' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/info.svg'/> Read Project Proposal (PDF)
+  <a href='/assets/pdf/EE547_Proposal.pdf' class='sx-button__content blue' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/resume.svg'/> Read Project Proposal (PDF)
   </a>
 </div>
 
+{% assign github_url = 'https://github.com/Update-For-Integrated-Business-AI/CORU' %}
 <div class='sx-button'>
-  <a href='https://github.com/Update-For-Integrated-Business-AI/CORU' class='sx-button__content green' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/paint_brush.svg'/> View CORU Database
+  <a href='{{ github_url }}' class='sx-button__content green' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/resume.svg'/> View CORU Database
   </a>
 </div>

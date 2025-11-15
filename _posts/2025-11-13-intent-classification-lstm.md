@@ -1,9 +1,9 @@
 ---
 layout: post # Do not change
-category: [Machine Learning] # Project categories
+category: [ml] # Project categories
 title: "Intent Classification for ATIS Airline Queries (EE 541)" # Project title
 date:   2025-11-13 10:00:00 -0800 # Date from proposal timeline
-author: LinLinHua # Your author nick
+author: LilyHua # Your author nick
 
 #
 nextPart: _posts/2025-11-13-receipt-inbox.md # Links to your next project
@@ -45,27 +45,27 @@ This project was a deep dive into the entire experimental pipeline of an NLP pro
 ---
 
 ### Project Links
-
+{% assign url3 = 'https://github.com/kanglinde/ee541-final-proj.git' %}
 <div class='sx-button'>
-  <a href='https://github.com/kanglinde/ee541-final-proj.git' class='sx-button__content theme' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/c.svg'/> View Project on GitHub
+  <a href='{{ url3 }}' class='sx-button__content red' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/icons8-github-500.svg'/> View Project on GitHub
   </a>
 </div>
 
 <div class='sx-button'>
   <a href='/assets/pdf/EE541_Intent_Classification_Proposal.pdf' class='sx-button__content blue' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/info.svg'/> Read the Full Project Proposal (PDF)
+    <img src='{{ site.baseurl }}/assets/img/icons/resume.svg' alt="Info Icon"/> Read the Full Project Proposal (PDF)
   </a>
 </div>
-
+{% assign url2 = 'https://ee541.usc-ece.com/project/topics/intent-classification.html' %}
 <div class='sx-button'>
-  <a href='https://ee541.usc-ece.com/project/topics/intent-classification.html' class='sx-button__content orange' target='_blank' rel='noopener noreferrer'>
+  <a href='{{ url2 }}' class='sx-button__content orange' target='_blank' rel='noopener noreferrer'>
     <img src='/assets/img/icons/info.svg'/> View Official Topic Description
   </a>
 </div>
-
+{% assign github_url1 = 'https://github.com/howl-anderson/ATIS_dataset' %}
 <div class='sx-button'>
-  <a href='https://github.com/howl-anderson/ATIS_dataset' class='sx-button__content green' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/paint_brush.svg'/> View Data Source (ATIS)
+  <a href='{{ github_url1 }}' class='sx-button__content green' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/info.svg'/> View Data Source (ATIS)
   </a>
 </div>

@@ -1,9 +1,9 @@
 ---
 layout: post # Do not change
-category: [devops, git, ci-cd] # Project categories
+category: [ci-cd] # Project categories
 title: "CI/CD Pipeline for this Personal Portfolio" # Project title
 date:   2025-11-14 21:30:00 -0800 # Today's date
-author: LinLinHua # Your author nick
+author: LilyHua # Your author nick
 prevPart: _posts/2025-11-13-receipt-inbox.md # Links to your previous project
 # nextPart: (This is your latest project)
 og_description: "Building the automated CI/CD pipeline for this site using rbenv, Jekyll, Bundler, and GitHub Pages."
@@ -56,9 +56,9 @@ The entire site is hosted for free on **GitHub Pages**.
 ---
 
 ### Project Links
-
+{% assign github_url = 'https://github.com/LinLinHua/LinLinHua.github.io' %}
 <div class='sx-button'>
-  <a href='https://github.com/LinLinHua/LinLinHua.github.io' class='sx-button__content theme' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/c.svg'/> View Source for This Website
+  <a href='{{ github_url }}' class='sx-button__content red' target='_blank' rel='noopener noreferrer'>
+    <img src='/assets/img/icons/icons8-github-500.svg'/> View Source for This Website
   </a>
 </div>

@@ -1,9 +1,9 @@
 ---
 layout: post # Do not change
-category: [Machine Learning] # Project categories
+category: [ml] # Project categories
 title: "Co-authored: Multi-Output Regression with GANs (MOR-GANs)" # Title from paper
 date:   2021-09-01 10:00:00 +0100 # Date from resume
-author: LinLinHua # Your author nick
+author: LilyHua # Your author nick
 nextPart: _posts/2025-11-13-intent-classification-lstm.md
 # Links to your next project
 # prevPart: (This is your first project post, so no prevPart)
@@ -42,7 +42,9 @@ As formally stated in the "Author Contributions" section of the paper, my key ro
 I was responsible for implementing and testing the various deep learning models using **Python**, **TensorFlow**, and the **Keras** API. A significant part of my work involved conducting a rigorous comparative analysis of the WGAN model's performance against several other established deep learning architectures, including:
 
 * **AutoEncoders (AEs)**
+
 * **Recurrent Neural Networks (RNNs)**
+
 * **Convolutional Neural Networks (CNNs)**
 
 ### Compelling Results: Outperforming Traditional Methods
@@ -53,8 +55,8 @@ The plots below show the generated data (red dots) learning to match the true da
 
 <div class="sx-center">
     <div class="sx-picture">
-    <a href="/assets/img/posts/wgan_distribution.jpg" data-lity>
-        <img src="/assets/img/posts/wgan_distribution.jpg" alt="WGAN Distribution Results on Annulus Dataset"/>
+    <a href="/assets/img/posts/wgan_distribution.png" data-lity>
+        <img src="/assets/img/posts/wgan_distribution.png" alt="WGAN Distribution Results on Annulus Dataset"/>
     </a>
     <span class="sx-subtitle">Figure (adapted): WGAN successfully models the multi-modal annulus, with generated (red) and true (blue) data.</span>
     </div>
@@ -66,14 +68,10 @@ This research definitively demonstrated that GANs are a highly viable and flexib
 
 ### Project Links & Publication
 
-<div class='sx-button'>
-  <a href='/assets/pdf/WGAN_Paper.pdf' class='sx-button__content blue' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/info.svg'/> Read the Full Paper (PDF)
-  </a>
-</div>
+{% assign publication_url = 'https://www.mdpi.com/2076-3417/12/18/9209' %}
 
 <div class='sx-button'>
-  <a href='https://link.springer.com/article/10.1007/s00521-022-07759-9' class='sx-button__content theme' target='_blank' rel='noopener noreferrer'>
-    <img src='/assets/img/icons/c.svg'/> View Publication on Springer
+  <a href='{{ publication_url }}' class='sx-button__content red' target='_blank' rel='noopener noreferrer'>
+    <img src='{{ site.baseurl }}/assets/img/icons/info.svg' alt="Publication Icon"/> View Publication
   </a>
 </div>
