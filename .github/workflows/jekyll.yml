@@ -35,6 +35,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    
+    # 👇 THIS BLOCK FIXES THE "id-token: write" PERMISSION ERROR
+    permissions:
+      contents: read # Required to read the code
+      pages: write # Required to deploy the page files
+      id-token: write # Required for the deploy action's OIDC authentication
+    # 👆 END FIX
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
