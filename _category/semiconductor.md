@@ -1,0 +1,7 @@
+---
+category: [semiconductor] # Category ID for posts to use
+hue: var(--c-themeHueRed) # Category hue (matches nav bar color)
+title: Semiconductor Manufacturing Projects # Category title
+description: Technical deep dives into Microelectronics, Process Engineering, and Nanomaterials.
+layout: category
+---

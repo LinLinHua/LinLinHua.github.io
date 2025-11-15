@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------
+# - title: Projects
+#   url: category/projects.html # We will create this "projects" category next
+#   icon: assets/img/icons/c.svg # Using the 'c' icon as a placeholder for "code"
+#   hue: "var(--c-themeHueRed)" # Red hue
+# -----------------------------------------------------------------
+- title: About Me
+  url: about/index.html # This links to your "about.md" page
+  icon: assets/img/icons/info.svg
+  hue: "var(--c-themeHueGreen)"
+# -----------------------------------------------------------------
+- title: GitHub
+  url: https://github.com/LinLinHua # Your GitHub profile from your resume
+  icon: assets/img/icons/icons8-github-500.svg # Re-using this icon
+  hue: "var(--c-themeHueBlue)"
+# -----------------------------------------------------------------
+- title: Resume
+  url: /assets/pdf/LinLin_Hua-Resume.pdf # Direct link to your resume PDF
+  icon: assets/img/icons/resume.svg # Using this icon as a placeholder
+  hue: "var(--c-themeHueOrange)"
+# -----------------------------------------------------------------
+
+# -----------------------------------------------------------------
+- title: Semiconductor
+  url: /category/semiconductor.html # Direct link to your resume PDF
+  icon: assets/img/icons/semiconductor-icon.svg # Using this icon as a placeholder
+  hue: "var(--c-themeHueOrange)"
+# -----------------------------------------------------------------
