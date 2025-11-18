@@ -30,6 +30,7 @@ url: "https://LinLinHua.github.io" # the base hostname & protocol for your site,
 theme: jekyll-theme-simplex
 plugins:
   - jekyll-feed
+  # - jekyll-katex  # <-- Add this line
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -69,3 +70,9 @@ defaults:
       type: category
     values:
       layout: "category"
+
+# _config.yml
+
+# ... (all your other settings like title, theme, etc.) ...
+# kramdown:
+#   math_engine: katex

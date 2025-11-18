@@ -1,7 +1,7 @@
 ---
 layout: post # Do not change
 category: [ml] # Project categories
-title: "Intent Classification for ATIS Airline Queries (EE 541)" # Project title
+title: "Intent Classification for ATIS Airline Queries" # Project title
 date:   2025-11-13 10:00:00 -0800 # Date from proposal timeline
 author: LilyHua # Your author nick
 
@@ -11,13 +11,13 @@ prevPart: _posts/2021-09-01-gans-regression-paper.md # Links to your previous pr
 og_description: "A systematic approach to multi-class text classification using LSTMs and PyTorch, comparing learned vs. pre-trained GloVe embeddings on the ATIS dataset."
 ---
 
-This project for my EE 541 Deep Learning course was a systematic investigation into multi-class text classification. The goal was to build a system that could understand a user's natural language query and classify it into one of 21 distinct intents for the **ATIS (Airline Travel Information System)** dataset [cite: 12-13].
+This project for my EE 541 Deep Learning course was a systematic investigation into multi-class text classification. The goal was to build a system that could understand a user's natural language query and classify it into one of 21 distinct intents for the **ATIS (Airline Travel Information System)** dataset.
 
 This is a classic but challenging NLP problem, as the model must distinguish between semantically similar queries, such as "show me flights" (`flight` intent) versus "what time is my flight" (`flight_time` intent).
 
 ### My Role: PyTorch Pipeline and Core Model
 
-[cite_start]As a co-author of the project, my primary responsibilities were focused on the core data and modeling pipeline [cite: 36-54]:
+As a co-author of the project, my primary responsibilities were focused on the core data and modeling pipeline.:
 1.  **PyTorch Data Pipeline:** I implemented the complete `Dataset` and `DataLoader` classes, which handled tokenizing, numericalizing, and batching the raw text queries for the model.
 2.  **Core Model Implementation:** I implemented and trained the primary **LSTM (Long Short-Term Memory)** model from scratch, including the embedding, LSTM, and final linear classification layers.
 3.  **Final Analysis:** I was responsible for writing the analysis and conclusion for the final report and completing the Model Card.
