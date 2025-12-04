@@ -13,42 +13,48 @@ Manually transcribing receipts from photos, PDFs, and emails into a spreadsheet 
 
 A user uploads a receipt, and the system automatically extracts the merchant, date, and total. It then leverages machine learning to infer the spending category (e.g., "Groceries," "Travel") and stores everything in a searchable dashboard. The system also runs anomaly detection rules (like "duplicate charge" or "unusually high total") and notifies the user.
 
+
+
+[Image of serverless architecture diagram]
+
+
 ### Core Features
-* [cite_start]**Multi-Format Upload:** Users can upload receipts from a browser, including photos, screenshots, and PDFs[cite: 5, 11].
+* **Multi-Format Upload:** Users can upload receipts from a browser, including photos, screenshots, and PDFs.
 * **Automatic OCR & Parsing:** Utilizes AWS Textract for automatic text and line-item extraction.
-* [cite_start]**AI-Powered Categorization:** Employs ML models (Comprehend/Bedrock) to intelligently suggest spending categories.
-* [cite_start]**Smart Alerts:** Pushes email notifications (via SES) for detected spending anomalies.
+* **AI-Powered Categorization:** Employs ML models to intelligently suggest spending categories.
+* **Smart Alerts:** Pushes email notifications (via SES) for detected spending anomalies.
 * **Searchable Dashboard:** Provides a full-text search and detailed view of all processed receipts.
 
 ---
 
-### My Role: Backend Architecture & ML Integration
+### My Role: Backend Architecture & Database Design
 
-As a backend and machine learning engineer on this team, my primary responsibility was **designing the asynchronous processing pipeline and integrating the AWS machine learning services**.
+As the **Backend Lead** for this project, I was responsible for architecting the serverless infrastructure, implementing the secure API layer, and designing the hybrid data model.
 
-#### Why Asynchronous?
-Receipt processing, especially OCR (Textract) and ML inference (Comprehend/Bedrock), is a slow and "bursty" operation. Running it synchronously would lead to API timeouts. We therefore adopted a queue-based, serverless architecture, which is fundamental to this cloud computing project.
+#### 1. Serverless API Architecture (FastAPI + Lambda)
+I designed and developed the core RESTful API using **FastAPI**, deployed as a serverless function on **AWS Lambda** via **API Gateway**. This architecture allows the system to scale automatically to zero when idle, minimizing costs.
 
-#### System Flow (Queue Fan-out):
-The pipeline I designed follows this event-driven flow:
+#### 2. Secure Authentication & Authorization
+I implemented a custom authentication system from scratch:
+* **User Management:** Designed the user schema and deployed a self-managed **PostgreSQL** database on an **Amazon EC2** instance (hardening security via `pg_hba.conf` and Security Groups).
+* **Session Security:** Implemented **JWT (JSON Web Tokens)** for stateless authentication, ensuring secure communication between the React frontend and backend.
 
-1.  **Upload & Trigger:** A user uploads a file to **Amazon S3** via a pre-signed URL.
-2.  **S3 Event -> SQS (Queue 1):** The S3 "put" event triggers a message containing the file information onto our first **SQS Queue (`ocr-queue`)**.
-3.  **OCR Worker (Lambda):** An **AWS Lambda** worker polls this queue. Upon receiving a message, it invokes **AWS Textract** to perform OCR. It then writes the raw JSON text output back to S3.
-4.  **-> SQS (Queue 2):** After the OCR job succeeds, the worker places a new "parsing" job onto the second **SQS Queue (`parse-queue`)**.
-5.  **Parse & Categorize Worker (Lambda):** A second Lambda worker polls this queue. It retrieves the OCR text, calls **Amazon Bedrock/Comprehend** for ML-based categorization, and writes the final, structured data (merchant, total, category, etc.) into our **PostgreSQL on RDS** database.
-
-This "cascading queues" architecture decouples the OCR and ML inference steps, dramatically improving system reliability, fault tolerance (via retries and DLQs), and maintainability.
+#### 3. High-Performance Data & Upload Pipeline
+To optimize performance for large file uploads and "bursty" traffic:
+* **Presigned S3 URLs:** I built a workflow where the API generates temporary, secure URLs, allowing the frontend to upload receipts directly to **Amazon S3**. This bypasses the API server bottleneck entirely.
+* **Hybrid Database Model:** I utilized **PostgreSQL** for relational user data and **Amazon DynamoDB** for high-speed, key-value access to receipt metadata and processing status.
+* **Async Dispatch:** My API endpoints integrate with **Amazon SQS**, dispatching processing tasks to background workers to decouple the user interface from heavy ML operations.
 
 ### Technology Stack
-* [cite_start]**Language:** **Python** (for all backend AWS Lambda functions), JavaScript (React)
-* **AWS Services:** Lambda, SQS, S3, API Gateway, Textract, Comprehend/Bedrock, RDS (PostgreSQL), SES, IAM
-* [cite_start]**Frameworks:** FastAPI, SQLAlchemy, Pydantic (for backend API)
+* **Language:** **Python** (FastAPI, SQLAlchemy, Boto3)
+* **Compute & API:** AWS Lambda, Amazon API Gateway
+* **Data & Storage:** PostgreSQL on EC2, Amazon DynamoDB, Amazon S3
+* **Infrastructure:** AWS SAM (Serverless Application Model), AWS IAM, Secrets Manager
 
 ---
 
 ### Project Links
-{% assign github_url1 = 'https://github.com/kanglinde/ee547-final-project.git' %}
+{% assign github_url1 = 'https://github.com/LinLinHua/ReceiptInbox---Serverless-Receipt-Parser-Smart-Alerts.git' %}
 <div class='sx-button'>
   <a href='{{ github_url1 }}' class='sx-button__content red' target='_blank' rel='noopener noreferrer'>
     <img src='/assets/img/icons/icons8-github-500.svg'/> View on GitHub

@@ -5,6 +5,7 @@ title: "CI/CD Pipeline for this Personal Portfolio" # Project title
 date:   2025-11-14 21:30:00 -0800 # Today's date
 author: LilyHua # Your author nick
 prevPart: _posts/2025-11-13-receipt-inbox.md # Links to your previous project
+nextPart: _posts/2025-12-02-adaptive-weight-packing-profiler-for-efficient-edge-LLM-inference.md
 # nextPart: (This is your latest project)
 og_description: "Building the automated CI/CD pipeline for this site using rbenv, Jekyll, Bundler, and GitHub Pages."
 ---

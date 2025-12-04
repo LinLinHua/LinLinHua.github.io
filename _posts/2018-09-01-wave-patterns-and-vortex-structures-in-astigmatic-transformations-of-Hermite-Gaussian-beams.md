@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [optics, computational-physics]
+category: [optics]
 title: "Optical Vortex Generation: Astigmatic Transformation of Hermite-Gaussian Beams"
 date:   2018-09-15 11:00:00 +0800
 author: LilyHua
@@ -29,7 +29,7 @@ $$
 I(r, z) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp \left( - \frac{2r^2}{w(z)^2} \right)
 $$
 
-The beam's propagation is characterized by the **Rayleigh Range** ($z_R$) and the **Beam Waist** ($w_0$), dictating its spreading ($$w(z)$$) and far-field divergence ($\theta$):
+The beam's propagation is characterized by the **Rayleigh Range** ($$z_R$$) and the **Beam Waist** ($$w_0$$), dictating its spreading ($$w(z)$$) and far-field divergence ($$\theta$$):
 
 $$
 z_R = \frac{\pi w_0^2}{\lambda} \quad \text{and} \quad \theta \approx \frac{\lambda}{\pi w_0}
