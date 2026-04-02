@@ -1,0 +1,67 @@
+name: Lin-Lin Hua
+tagline: GPU Systems · Semiconductor · ML Research
+email: linlinhu@usc.edu
+github: LinLinHua
+linkedin: lin-lin-h-70b118174
+website: linlinhua.github.io
+phone: "+1 (213) 264-5314"
+resume_pdf: /assets/pdf/LinLin_Hua_Resume.pdf
+
+bio:
+  - "Electrical engineer with research and industry experience spanning GPU kernel optimization, semiconductor process engineering, and applied machine learning. Currently pursuing M.S. ECE at USC Viterbi (ML & Data Science track) as a merit-based scholarship recipient."
+  - "Two years at Lam Research as a process engineer on CMOS/DRAM device development. Co-authored ML research at Imperial College London. Cleanroom fabrication at NCTU. Now focused on GPU systems — CUDA kernel engineering, TensorRT inference optimization, and LLM infrastructure."
+
+education:
+  - degree: M.S. Electrical & Computer Engineering
+    school: University of Southern California
+    location: Los Angeles, CA
+    period: Jan 2025 – Dec 2026
+    note: "Merit-Based Scholarship Recipient · ML & Data Science Track"
+  - degree: M.S. Nanomaterials
+    school: Imperial College London
+    location: London, UK
+    period: Oct 2020 – Nov 2021
+    note: "QS #7 Engineering & Technology"
+  - degree: B.S. Microelectronics
+    school: National Chiao Tung University
+    location: Hsinchu, Taiwan
+    period: Sep 2017 – Jul 2020
+
+experience:
+  - role: Process Engineer
+    company: Lam Research
+    location: Tainan, Taiwan
+    period: May 2022 – May 2024
+    bullets:
+      - "Applied multivariate SPC and DOE across 20+ CMOS process parameters to optimize yield stability and reduce prototype costs across DRAM and CMOS device development."
+      - "Led VisEra Meta Lens demonstration and experiments for the Kiyo conductor etch tool, driving a new customer sale."
+      - "Built deep understanding of semiconductor device physics and chip manufacturing pipelines directly applicable to GPU/ASIC hardware-software co-design."
+  - role: Research Assistant — INHALE Team
+    company: Imperial College London
+    location: London, UK
+    period: Apr 2021 – Sep 2021
+    bullets:
+      - "Co-authored 'Multi-Output Regression with GANs' (MOR-GANs), published in Applied Sciences 2022 (DOI: 10.3390/app12189209)."
+      - "Implemented WGAN in TensorFlow/Keras; benchmarked against AutoEncoder, RNN, and CNN on multi-dimensional air pollution datasets."
+  - role: Laboratory Assistant — Electrophysics Lab
+    company: National Chiao Tung University
+    location: Hsinchu, Taiwan
+    period: Jun 2018 – Sep 2018
+    bullets:
+      - "Visualized 3D particle propagation and optical vortex structures from astigmatic HG beam transformations using MATLAB."
+
+skills:
+  - name: CUDA / GPU
+    level: 85
+  - name: Python / ML
+    level: 88
+  - name: C++ / Systems
+    level: 78
+  - name: Semiconductor
+    level: 85
+  - name: MATLAB
+    level: 82
+  - name: Cloud (AWS)
+    level: 72
+
+status: Open to roles

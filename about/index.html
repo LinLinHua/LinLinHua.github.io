@@ -1,0 +1,81 @@
+---
+layout: default
+title: About
+---
+{% assign author = site.data.author %}
+
+<div class="about-hero">
+  <img class="about-photo" src="/assets/img/posts/linlinhua.JPG" alt="{{ author.name }}">
+  <div class="about-intro">
+    {% for para in author.bio %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="about-grid">
+  <div>
+    <div class="spec-row"><span class="spec-key">Currently</span><span class="spec-val">M.S. ECE · USC Viterbi</span></div>
+    <div class="spec-row"><span class="spec-key">Focus</span><span class="spec-val">GPU Systems · ML & DS Track</span></div>
+    <div class="spec-row"><span class="spec-key">Industry</span><span class="spec-val">Lam Research, 2022–2024</span></div>
+    <div class="spec-row"><span class="spec-key">Research</span><span class="spec-val">NCTU · Imperial College London</span></div>
+    <div class="spec-row"><span class="spec-key">Domains</span><span class="spec-val">GPU · Semiconductors · ML · Optics</span></div>
+    <div class="spec-row"><span class="spec-key">Languages</span><span class="spec-val">C++ · CUDA · Python · MATLAB · SQL</span></div>
+    <div class="spec-row"><span class="spec-key">Status</span><span class="spec-val"><span class="sdot"></span>Open to roles</span></div>
+  </div>
+  <div class="skill-grid">
+    {% for skill in author.skills %}
+    <div class="skill-item">
+      <p class="skill-name">{{ skill.name }}</p>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:{{ skill.level }}%"></div></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="sec-hd"><span class="sec-lbl">Experience</span><div class="sec-line"></div></div>
+<div style="margin-bottom:4rem">
+  {% for job in author.experience %}
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-role">{{ job.role }}</span>
+      <span class="exp-period">{{ job.period }}</span>
+    </div>
+    <p class="exp-org">{{ job.company }} · {{ job.location }}</p>
+    <ul class="exp-bullets">
+      {% for bullet in job.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="sec-hd"><span class="sec-lbl">Education</span><div class="sec-line"></div></div>
+<div style="margin-bottom:4rem">
+  {% for edu in author.education %}
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-role">{{ edu.degree }}</span>
+      <span class="exp-period">{{ edu.period }}</span>
+    </div>
+    <p class="exp-org">{{ edu.school }} · {{ edu.location }}</p>
+    {% if edu.note %}<p style="font-size:13px;color:var(--fg3);margin-top:.25rem">{{ edu.note }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="sec-hd"><span class="sec-lbl">Awards & Scholarships</span><div class="sec-line"></div></div>
+<div style="margin-bottom:4rem">
+  {% for cert in site.data.certificates %}
+  <div class="award-item">
+    <span class="award-year">{{ cert.year }}</span>
+    <div>
+      <p class="award-name">{{ cert.name }}</p>
+      <p class="award-desc">{{ cert.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<a href="{{ author.resume_pdf }}" class="btn-link" target="_blank">↗ Download Resume (PDF)</a>

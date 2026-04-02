@@ -1,38 +1,9 @@
-{% if include.embedded != nil %}
-<ul class="list">
-{% else %}
-<ul class="list primary">
-{% endif %}
-    {% for item in include.nav %}
-        <li class="item">
-
-            <div class="item-controls">
-                
-                {% assign is_external = item.url | slice: 0, 4 %}
-                
-                {% if is_external == 'http' %}
-                    <a href="{{ item.url }}">
-                {% else %}
-                    <a href="{{ site.url }}/{{ item.url }}">
-                {% endif %}
-                
-                {% if item.icon != nil %}
-                    <img src="{{ site.url }}/{{ item.icon }}"/>
-                {% endif %}
-                {% if item.hue != nil %}
-                    <p style="color: {{ item.hue }}">{{ item.title }}</p>
-                {% else %}
-                    <p>{{ item.title }}</p>
-                {% endif%}
-                </a>
-
-            {% if item.subnav %}
-                <a class="button-submenu" href="#"><i class="arrow"></i></a>
-            </div>
-                {% include nav.html nav=item.subnav embedded=true %}
-            {% else %}
-            </div>
-            {% endif %}
-        </li>   
-    {% endfor %}
-</ul>
+<nav>
+  <a class="nav-logo" href="/"><span>LH</span> / Lin-Lin Hua</a>
+  <ul class="nav-links">
+    <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Index</a></li>
+    <li><a href="/work/" {% if page.url contains "/work" or page.layout == "post" %}class="active"{% endif %}>Work</a></li>
+    <li><a href="/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a></li>
+    <li><a href="/contact/" {% if page.url contains "/contact" %}class="active"{% endif %}>Contact</a></li>
+  </ul>
+</nav>

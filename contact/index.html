@@ -1,0 +1,19 @@
+---
+layout: default
+title: Contact
+---
+{% assign author = site.data.author %}
+
+<div class="sec-hd"><span class="sec-lbl">Get in touch</span><div class="sec-line"></div></div>
+<h1 style="margin-bottom:1.5rem">Let's work<br><em>together.</em></h1>
+<p style="font-size:14px;color:var(--fg2);line-height:1.8;max-width:420px">Open to GPU systems engineering, hardware-software co-design, ML inference infrastructure, and semiconductor-adjacent research roles. Especially interested in positions bridging low-level hardware optimization and intelligent systems.</p>
+
+<div class="contact-row">
+  <a class="contact-link" href="mailto:{{ author.email }}">↗ {{ author.email }}</a>
+  <div class="cdot"></div>
+  <a class="contact-link" href="https://github.com/{{ author.github }}" target="_blank">↗ GitHub</a>
+  <div class="cdot"></div>
+  <a class="contact-link" href="https://linkedin.com/in/{{ author.linkedin }}" target="_blank">↗ LinkedIn</a>
+  <div class="cdot"></div>
+  <a class="contact-link" href="{{ author.resume_pdf }}" target="_blank">↗ Resume (PDF)</a>
+</div>

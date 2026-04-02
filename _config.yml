@@ -1,1 +1,22 @@
-theme: null
+title: Lin-Lin Hua
+description: GPU Systems Engineer & Researcher
+url: "https://linlinhua.github.io"
+baseurl: ""
+
+author: linlinhua
+
+permalink: /posts/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  math_engine: mathjax
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
