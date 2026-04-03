@@ -49,15 +49,19 @@ One operational challenge: the GloVe 6B.100d file is approximately 330 MB, excee
 
 The table below summarises the four experiments. Accuracy is a misleading metric here given class imbalance — Macro F1 is the number that matters.
 
-![Performance summary table across all four experiments](/assets/img/posts/intent_perf_table.png)
-*Table 1: Performance summary. Exp. 1 (Logistic Regression + TF-IDF) establishes the baseline. Multi-layer LSTM with GloVe initialisation and further hyperparameter optimisation achieves the best result across both metrics.*
+<figure style="margin: 2rem 0;">
+  <img src="/assets/img/posts/intent_perf_table.png" alt="Performance summary table across all four experiments" style="width:100%; max-width:400px; display:block;">
+  <figcaption style="font-size:13px; color:#8a8a84; margin-top:0.6rem; line-height:1.6;">Table 1: Performance summary. Exp. 1 (Logistic Regression + TF-IDF) establishes the baseline. Multi-layer LSTM with GloVe initialisation and further hyperparameter optimisation achieves the best result across both metrics.</figcaption>
+</figure>
 
 The key takeaways: GloVe initialisation (Exp. 2a → 2b) adds ~8 points of Macro F1 with no architectural change — evidence that pre-trained semantics directly benefit the small-data regime. The jump from Exp. 1 to Exp. 2a is larger still (~26 points), confirming that sequential structure matters far more than richer features for this task.
 
 The confusion matrix for the best model (Exp. 3, Multi-layer LSTM + GloVe Optimised) breaks down where errors concentrate:
 
-![Confusion matrix for the best-performing LSTM+GloVe optimised model](/assets/img/posts/intent_confusion_matrix.png)
-*Figure 5: Confusion matrix, LSTM + GloVe Optimised (Exp. 3). The strong diagonal confirms high per-class precision on dominant classes. Most off-diagonal mass sits in composite intent rows (e.g. `flight+airfare`, `meal`) — compound intents that share surface-level vocabulary with their constituent single-intent classes.*
+<figure style="margin: 2rem 0;">
+  <img src="/assets/img/posts/intent_confusion_matrix.png" alt="Confusion matrix for the best-performing LSTM+GloVe optimised model" style="width:100%; max-width:400px; display:block;">
+  <figcaption style="font-size:13px; color:#8a8a84; margin-top:0.6rem; line-height:1.6;">Figure 5: Confusion matrix, LSTM + GloVe Optimised (Exp. 3). The strong diagonal confirms high per-class precision on dominant classes. Most off-diagonal mass sits in composite intent rows (e.g. `flight+airfare`, `meal`) — compound intents that share surface-level vocabulary with their constituent single-intent classes.</figcaption>
+</figure>
 
 The dominant `flight` class (626 test examples, top-left) is handled near-perfectly. Errors concentrate in low-frequency composite intents such as `flight+airfare` and `meal`, where limited training examples make it hard to distinguish combined from individual intents. This is consistent with the known difficulty of ATIS at the long tail [3].
 
